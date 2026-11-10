@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marvin Mussacate | Full-stack developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EAF4F8;--surface:#FFFFFF;--ink:#0C2A40;--muted:#3F5F76;--line:#B7D3E0;--sea:#1B6F99;--red:#C42E24;--gold:#F2B705;--on-red:#FFF;
+  --sky:#9FD6EE;--sun:#F7CE45;--paper:#EBD7A4;--paper-ink:#3A2410;
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A2540;--surface:#10365A;--ink:#EAF4F8;--muted:#A9C6D8;--line:#27557F;--sea:#6CC1EA;--red:#FF6A5C;--on-red:#0A2540;--sky:#04122A;--sun:#E6ECF5}}
+:root[data-theme="dark"]{--bg:#0A2540;--surface:#10365A;--ink:#EAF4F8;--muted:#A9C6D8;--line:#27557F;--sea:#6CC1EA;--red:#FF6A5C;--on-red:#0A2540;--sky:#04122A;--sun:#E6ECF5}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+h1,h2{font-weight:800;line-height:1.08;margin:0;letter-spacing:-.025em}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:.5rem}
+p{margin:0 0 1rem;max-width:62ch}
+.scene{background:linear-gradient(var(--sky),var(--bg) 85%);position:relative;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;gap:1rem}
+.top b{font-weight:800;font-size:1.1rem;letter-spacing:-.01em}
+.top nav{display:flex;gap:1.25rem;align-items:center;font-weight:600}
+.top nav a{text-decoration:none}
+.top nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.tg{display:flex;gap:.5rem}
+.seg{display:flex;border:2px solid var(--ink);border-radius:999px;overflow:hidden;background:var(--bg)}
+.seg button,#theme{font:700 .85rem var(--font);color:var(--ink);background:none;border:0;padding:.4rem .75rem;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+#theme{border:2px solid var(--ink);border-radius:999px;background:var(--bg);font-size:1.05rem;line-height:1;padding:.35rem .65rem}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center;padding:2rem 0 3rem}
+.hero h1{font-size:clamp(2.6rem,7.5vw,5rem);margin-bottom:1.25rem}
+.lead{font-size:1.2rem;color:var(--muted)}
+.cta,.contact{display:flex;flex-wrap:wrap;gap:.75rem}
+.cta{margin-top:1.75rem}.contact{margin-top:1.5rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--red)}
+.btn.main{background:var(--red);color:var(--on-red)}
+.btn.main:hover{filter:brightness(1.08)}
+.btn.alt{color:var(--ink);border-color:var(--ink);background:var(--bg)}
+.art{position:relative;padding:1.5rem 0}
+.art::before{content:"";position:absolute;width:min(78%,17rem);aspect-ratio:1;border-radius:50%;background:var(--sun);right:-4%;top:-6%;box-shadow:0 0 0 18px color-mix(in srgb,var(--sun) 25%,transparent),0 0 0 40px color-mix(in srgb,var(--sun) 12%,transparent)}
+.poster{position:relative;background:var(--paper);color:var(--paper-ink);padding:1.5rem 1.5rem 1.25rem;text-align:center;transform:rotate(2.5deg);box-shadow:0 18px 40px -12px rgba(0,0,0,.5);border:6px double var(--paper-ink);max-width:23rem;margin:0 auto;animation:drop .9s cubic-bezier(.2,.9,.3,1.2) both;transform-origin:50% 0}
+@keyframes drop{from{transform:rotate(-9deg) translateY(-60px);opacity:0}to{transform:rotate(2.5deg) translateY(0);opacity:1}}
+.poster .w{font-size:2.4rem;font-weight:800;letter-spacing:.08em;line-height:1}
+.poster svg{width:9rem;height:auto;margin:.5rem auto;display:block}
+.poster .who{font-weight:800;font-size:1.2rem;line-height:1.15}
+.poster .sub{font-size:.85rem;margin:.3rem auto .8rem;font-weight:600}
+.poster .bounty{font-weight:800;font-size:1.7rem;border-top:2px solid var(--paper-ink);padding-top:.6rem}
+.poster .note{font-size:.78rem;margin:.25rem 0 0;max-width:none;font-weight:600}
+.sea{position:relative;height:130px;margin-top:-10px}
+.sea .wv{position:absolute;left:0;bottom:0;width:200%;height:70px}
+.sea .w1{fill:var(--sea);opacity:.35;bottom:28px;animation:drift 22s linear infinite}
+.sea .w2{fill:var(--sea);opacity:.6;bottom:12px;animation:drift 15s linear infinite reverse}
+.sea .w3{fill:var(--surface);bottom:-2px;animation:drift 10s linear infinite}
+@keyframes drift{to{transform:translateX(-50%)}}
+.ship{position:absolute;left:58%;bottom:34px;width:clamp(120px,18vw,190px);animation:bob 4.5s ease-in-out infinite;z-index:1}
+@keyframes bob{50%{transform:translateY(7px) rotate(-1.5deg)}}
+.band{background:var(--surface);padding:2.5rem 0 3.5rem}
+section.plain{padding:3.5rem 0}
+.now{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:1.75rem}
+.now div{border-top:4px solid var(--red);padding-top:.9rem}
+.now h3{font-size:1.1rem;margin:0 0 .3rem}
+.now p{color:var(--muted);margin:0;font-size:1rem}
+dl.stack{margin:1.75rem 0 0}
+dl.stack div{display:grid;grid-template-columns:9rem 1fr;gap:1rem;padding:1rem 0;border-top:2px solid var(--line)}
+dl.stack div:last-child{border-bottom:2px solid var(--line)}
+dl.stack dt{font-weight:800;color:var(--sea);font-size:1.05rem}
+dl.stack dd{margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
+dl.stack span{background:var(--surface);border:2px solid var(--line);border-radius:999px;padding:.15rem .8rem;font-weight:600;font-size:.95rem}
+.route{margin:1.75rem 0 0 .5rem;padding:0;list-style:none;border-left:4px dashed var(--sea)}
+.route li{position:relative;padding:0 0 1.5rem 1.75rem}
+.route li::before{content:"";position:absolute;left:-.8rem;top:.45rem;width:1.1rem;height:1.1rem;border-radius:50%;background:var(--gold);border:3px solid var(--ink)}
+.route li.next::before{background:var(--red)}
+summary{cursor:pointer;font-weight:800;font-size:1.2rem;list-style:none;display:flex;gap:.75rem;align-items:baseline;flex-wrap:wrap}
+summary::-webkit-details-marker{display:none}
+summary .tag{font:600 .85rem var(--font);color:var(--muted);border:2px solid var(--line);border-radius:999px;padding:0 .6rem}
+summary::after{content:"+";margin-left:auto;font-size:1.4rem;color:var(--red)}
+details[open] summary::after{content:"\2212"}
+details p{margin:.6rem 0 .5rem;color:var(--muted)}
+details a{font-weight:700;color:var(--sea)}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem;border-top:2px solid var(--line)}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:1rem}.now{grid-template-columns:1fr}dl.stack div{grid-template-columns:1fr;gap:.5rem}.top nav a{display:none}.ship{left:50%}}
+.don{position:absolute;left:-.5rem;bottom:.2rem;z-index:3;font-weight:900;font-size:2.8rem;color:var(--red);transform:rotate(-12deg);-webkit-text-stroke:2px var(--ink);paint-order:stroke fill}
+@media (max-width:760px){.don{font-size:2.2rem}}
+@media (prefers-reduced-motion:reduce){.poster,.ship,.sea .wv{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="scene">
+ <div class="wrap">
+  <header class="top">
+   <b>Urassamx7</b>
+   <nav aria-label="Main">
+    <a href="#now" data-i18n="n1"></a><a href="#stack" data-i18n="n2"></a><a href="#projects" data-i18n="n3"></a><a href="#contact" data-i18n="n4"></a>
+    <div class="tg">
+     <div class="seg" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="pt" aria-pressed="false">PT</button></div>
+     <button id="theme" type="button" aria-label="Theme">☀</button>
+    </div>
+   </nav>
+  </header>
+  <main>
+   <section class="hero" aria-labelledby="name">
+    <div>
+     <h1 id="name">Marvin Mussacate</h1>
+     <p class="lead" data-i18n="lead"></p>
+     <p data-i18n="open"></p>
+     <div class="cta"><a class="btn main" href="#projects" data-i18n="c1"></a><a class="btn alt" href="https://github.com/Urassamx7" data-i18n="c2"></a></div>
+    </div>
+    <div class="art"><span class="don" aria-hidden="true">ドン!!</span>
+     <aside class="poster">
+      <div class="w" data-i18n="wanted"></div>
+      <svg viewBox="0 0 120 90" role="img" aria-label="Straw hat"><ellipse cx="60" cy="62" rx="56" ry="15" fill="#F2B705" stroke="#3A2410" stroke-width="3"/><path d="M26 58C26 22 94 22 94 58C80 66 40 66 26 58Z" fill="#F7CE45" stroke="#3A2410" stroke-width="3"/><path d="M27 50C45 58 75 58 93 50L94 58C80 66 40 66 26 58Z" fill="#C42E24" stroke="#3A2410" stroke-width="3"/></svg>
+      <div class="who">Marvin “Urassamx7” Mussacate</div>
+      <p class="sub" data-i18n="psub"></p>
+      <div class="bounty">฿ <span id="bounty">100,000,000</span></div>
+      <p class="note" data-i18n="pnote"></p>
+     </aside>
+    </div>
+   </section>
+  </main>
+ </div>
+ <div class="sea" aria-hidden="true">
+  <svg class="wv w1" viewBox="0 0 2400 60" preserveAspectRatio="none"><path id="wp" d="M0 30C100 10 200 50 300 30S500 10 600 30S800 50 900 30S1100 10 1200 30S1400 50 1500 30S1700 10 1800 30S2000 50 2100 30S2300 10 2400 30V60H0Z"/></svg>
+  <svg class="ship" viewBox="0 0 200 170">
+   <rect x="97" y="14" width="5" height="108" fill="#5A3A1E"/>
+   <path d="M102 24Q160 46 148 104L102 104Z" fill="#FFF8E7" stroke="#3A2410" stroke-width="2.5"/>
+   <path d="M97 36Q50 56 58 98L97 98Z" fill="#FFF8E7" stroke="#3A2410" stroke-width="2.5"/>
+   <circle cx="126" cy="62" r="13" fill="#fff" stroke="#3A2410" stroke-width="2.5"/>
+   <circle cx="121" cy="60" r="3" fill="#3A2410"/><circle cx="131" cy="60" r="3" fill="#3A2410"/><path d="M122 69h8" stroke="#3A2410" stroke-width="2"/>
+   <path d="M110 52Q126 38 142 52Z" fill="#F7CE45" stroke="#3A2410" stroke-width="2"/><path d="M111 51h30" stroke="#C42E24" stroke-width="3"/>
+   <path d="M99 14l22-6-22-4Z" fill="#C42E24"/>
+   <path d="M14 112Q100 150 186 112L172 140Q100 164 28 140Z" fill="#8A5A2E" stroke="#3A2410" stroke-width="3"/>
+   <path d="M14 112H186" stroke="#3A2410" stroke-width="3"/>
+   <circle cx="188" cy="112" r="11" fill="#F7CE45" stroke="#3A2410" stroke-width="3"/><circle cx="192" cy="110" r="2" fill="#3A2410"/>
+  </svg>
+  <svg class="wv w2" viewBox="0 0 2400 60" preserveAspectRatio="none"><use href="#wp"/></svg>
+  <svg class="wv w3" viewBox="0 0 2400 60" preserveAspectRatio="none" style="height:50px"><use href="#wp"/></svg>
+ </div>
+</div>
+
+<div class="band" id="now"><div class="wrap">
+ <h2 data-i18n="nh"></h2><p data-i18n="np"></p>
+ <div class="now">
+  <div><h3 data-i18n="a1h"></h3><p data-i18n="a1p"></p></div>
+  <div><h3 data-i18n="a2h"></h3><p data-i18n="a2p"></p></div>
+  <div><h3 data-i18n="a3h"></h3><p data-i18n="a3p"></p></div>
+ </div>
+</div></div>
+
+<div class="wrap">
+ <section class="plain" id="stack">
+  <h2 data-i18n="sh"></h2><p data-i18n="sp"></p>
+  <dl class="stack">
+   <div><dt>Frontend</dt><dd><span>JavaScript</span><span>TypeScript</span><span>HTML</span><span>CSS</span><span>React</span><span>Tailwind CSS</span></dd></div>
+   <div><dt>Backend</dt><dd><span>Next.js</span><span>Node.js</span><span>C# / .NET</span><span>Java</span><span>Docker</span></dd></div>
+   <div><dt data-i18n="db"></dt><dd><span>MySQL</span><span>PostgreSQL</span><span>Firebase</span><span>Prisma</span><span>Redis</span></dd></div>
+  </dl>
+ </section>
+ <section class="plain" id="projects" style="padding-top:1rem">
+  <h2 data-i18n="ph"></h2><p data-i18n="pp"></p>
+  <ol class="route">
+   <li class="next"><details><summary><span data-i18n="t0"></span><span class="tag" data-i18n="t0t"></span></summary><p data-i18n="d0"></p></details></li>
+   <li><details><summary>Weather App <span class="tag">JavaScript</span></summary><p data-i18n="d1"></p><a href="https://github.com/Urassamx7/Weather-App" data-i18n="repo"></a></details></li>
+   <li><details><summary>nlw-audioNotes <span class="tag">TypeScript</span></summary><p data-i18n="d2"></p><a href="https://github.com/Urassamx7/nlw-audioNotes" data-i18n="repo"></a></details></li>
+   <li><details><summary>bisc-sloder <span class="tag">JavaScript</span></summary><p data-i18n="d3"></p><a href="https://github.com/Urassamx7/bisc-sloder" data-i18n="repo"></a></details></li>
+   <li><details><summary><span data-i18n="t4"></span><span class="tag">CSS</span></summary><p data-i18n="d4"></p><a href="https://github.com/Urassamx7?tab=repositories" data-i18n="all"></a></details></li>
+  </ol>
+ </section>
+ <section class="plain" id="contact" style="padding-top:1rem">
+  <h2 data-i18n="kh"></h2><p data-i18n="kp"></p>
+  <div class="contact"><a class="btn main" href="https://wa.me/258842821131" data-i18n="wa"></a><a class="btn alt" href="https://mz.linkedin.com/in/marvin-mussacate-a7058127a">LinkedIn</a><a class="btn alt" href="https://x.com/bkp_da">X</a><a class="btn alt" href="https://www.instagram.com/urahara_ysenjo">Instagram</a></div>
+ </section>
+ <footer data-i18n="foot"></footer>
+</div>
+
+<script>
+(function(){
+var T={
+en:{n1:"Now",n2:"Stack",n3:"Projects",n4:"Contact",lead:"Full-stack developer from Mozambique. I build web apps with TypeScript, React and C#, and I’m learning to structure them with Clean Architecture.",open:"Open to side projects, collaborations and junior or mid-level roles.",c1:"See my projects",c2:"Open GitHub",wanted:"WANTED",psub:"Full-stack dev · Mozambique",pnote:"Grows with every commit.",nh:"Log Pose",np:"Where I’m heading right now.",a1h:"Building",a1p:"Side projects that let me practice the full cycle, from interface to database.",a2h:"Learning",a2p:"Clean Architecture with TypeScript and with C# on .NET, plus MVC patterns.",a3h:"Talk to me about",a3p:"Web development, software engineering, Clean Architecture and MVC.",sh:"Devil Fruits",sp:"The tools I use to build.",db:"Databases",ph:"Treasure Map",pp:"Select a stop to read more. The red marker is the next destination.",t0:"Clean Architecture API",t0t:"Next voyage",d0:"A backend in TypeScript or .NET with layered architecture, tests, Docker and CI. This will be my flagship project.",d1:"A weather web application that shows conditions for a searched location.",d2:"An audio notes app built while following the NLW learning event.",d3:"A software engineering course project (“Projecto ES”).",t4:"Frontend practice",d4:"Responsive layouts built from design challenges: an advice generator and a URL shortener interface.",repo:"View repository",all:"View all 21 repositories",kh:"Den Den Mushi",kp:"Got a project or a role in mind? Send me a message.",wa:"Message on WhatsApp",foot:"Built by Marvin Mussacate. Set sail, ship code, never give up.",th:"Switch theme",title:"Marvin Mussacate | Full-stack developer"},
+pt:{n1:"Agora",n2:"Stack",n3:"Projectos",n4:"Contacto",lead:"Programador full-stack de Moçambique. Construo aplicações web com TypeScript, React e C#, e estou a aprender a estruturá-las com Clean Architecture.",open:"Disponível para projectos pessoais, colaborações e vagas de nível júnior ou intermédio.",c1:"Ver os meus projectos",c2:"Abrir o GitHub",wanted:"PROCURADO",psub:"Dev full-stack · Moçambique",pnote:"Aumenta a cada commit.",nh:"Log Pose",np:"Para onde estou a navegar agora.",a1h:"A construir",a1p:"Projectos pessoais que me permitem praticar o ciclo completo, da interface à base de dados.",a2h:"A aprender",a2p:"Clean Architecture com TypeScript e com C# em .NET, e ainda padrões MVC.",a3h:"Fale comigo sobre",a3p:"Desenvolvimento web, engenharia de software, Clean Architecture e MVC.",sh:"Akuma no Mi",sp:"As ferramentas que uso para construir.",db:"Bases de dados",ph:"Mapa do Tesouro",pp:"Seleccione uma paragem para ler mais. O marcador vermelho é o próximo destino.",t0:"API em Clean Architecture",t0t:"Próxima viagem",d0:"Um backend em TypeScript ou .NET com arquitectura em camadas, testes, Docker e CI. Será o meu projecto principal.",d1:"Uma aplicação web de meteorologia que mostra as condições do local pesquisado.",d2:"Uma aplicação de notas de áudio criada durante o evento de aprendizagem NLW.",d3:"Um projecto de engenharia de software da faculdade (“Projecto ES”).",t4:"Prática de frontend",d4:"Layouts adaptáveis a vários ecrãs, criados a partir de desafios de design: um gerador de conselhos e uma interface de encurtador de URLs.",repo:"Ver repositório",all:"Ver os 21 repositórios",kh:"Den Den Mushi",kp:"Tem um projecto ou uma vaga em mente? Envie-me uma mensagem.",wa:"Mensagem no WhatsApp",foot:"Feito por Marvin Mussacate. Zarpar, entregar código, nunca desistir.",th:"Mudar o tema",title:"Marvin Mussacate | Programador full-stack"}};
+var root=document.documentElement,tb=document.getElementById('theme');
+function get(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function put(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function isDark(){var a=root.getAttribute('data-theme');return a?a==='dark':matchMedia('(prefers-color-scheme: dark)').matches}
+function paintTheme(){tb.textContent=isDark()?'☾':'☀'}
+function setLang(l){
+  root.lang=l==='pt'?'pt-MZ':'en';document.title=T[l].title;tb.setAttribute('aria-label',T[l].th);
+  document.querySelectorAll('[data-i18n]').forEach(function(e){e.textContent=T[l][e.dataset.i18n]});
+  document.querySelectorAll('.seg button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.l===l))});
+  put('lang',l);
+}
+var th=get('theme');if(th==='light'||th==='dark')root.setAttribute('data-theme',th);
+tb.addEventListener('click',function(){var n=isDark()?'light':'dark';root.setAttribute('data-theme',n);put('theme',n);paintTheme()});
+document.querySelectorAll('.seg button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
+var sl=get('lang');setLang(sl==='pt'||sl==='en'?sl:((navigator.language||'').slice(0,2)==='pt'?'pt':'en'));paintTheme();
+var el=document.getElementById('bounty');
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var t0=null;el.textContent='0';
+  (function step(t){if(t0===null)t0=t;var p=Math.min((t-t0)/1800,1);el.textContent=Math.round(1e8*(1-Math.pow(1-p,3))).toLocaleString('en-US');if(p<1)requestAnimationFrame(step)})(performance.now());
+}
+})();
+</script>
+</body>
+</html>
